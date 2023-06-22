@@ -16,7 +16,7 @@
             <div>
                 <span>Your IP: {{ ip }}</span>
             </div>
-            <form action="post">
+            <form action="." method="post">
                 <table>
                     <tr>
                         <td><span>Branch:</span></td>
@@ -38,17 +38,18 @@
                             </select>
                         </td>
                     </tr>
-                    <tr>
-                        <td><small>Instances:</small></td>
-                        <td>
-                            <ul>
-                                {% for i in instances %}
-                                    <li class="ins{{ i }}"></li>
-                                {% endfor %}
-                            </ul>
-                        </td>
-                    </tr>
                 </table>
+                <div id="submit">
+                    <input type="submit" value="Connect">
+                </div>
+                <div id="instances">
+                    <small>Instances:</small>
+                    <ul>
+                        {% for i in instances %}
+                            <li class="ins{{ i }}"></li>
+                        {% endfor %}
+                    </ul>
+                </div>
                 <br>
             </form>
         </div>
