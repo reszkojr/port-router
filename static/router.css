@@ -1,0 +1,19 @@
+body {
+    background-color: #126799;
+    font-family: Arial;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    padding: 15px;
+    width: 350px;
+    height: 250px;
+    background-color: white;
+    border-radius: 2px;
+    margin: auto;
+    top: 50%;
+    position: relative;
+    transform: translateY(50%);
+}
