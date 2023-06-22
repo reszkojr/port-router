@@ -8,12 +8,41 @@ body {
     flex-direction: column;
     place-items: center;
     padding: 15px;
-    width: 350px;
-    height: 250px;
+    width: 300px;
     background-color: white;
     border-radius: 2px;
-    margin: auto;
-    top: 50%;
-    position: relative;
-    transform: translateY(50%);
+}
+
+.center {
+   display: table; 
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -80%)
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 4px;
+    padding: 0;
+}
+
+li::before {
+    content: '';
+    height: 8px;
+    width: 8px;
+    background-color: #ff0000;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+span {
+    font-size: 15px;
+}
+
+select {
+    margin: 5px;
+    width: 80px
 }

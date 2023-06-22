@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +8,52 @@
     <link rel="stylesheet" href="{{ url_for('static', path='/router.css') }}">
     <title>Router</title>
 </head>
+
 <body>
-    <div id="form">
-        <h4>Router</h4>
-        <span>{{ ip }}</span>
+    <div class="center">
+        <div id="form">
+            <h4>Router</h4>
+            <div>
+                <span>Your IP: {{ ip }}</span>
+            </div>
+            <form action="post">
+                <table>
+                    <tr>
+                        <td><span>Branch:</span></td>
+                        <td>
+                            <select name="branch" id="branch">
+                                {% for b in branches %}
+                                <option value="{{ b }}">{{ b }}</option>
+                                {% endfor %}
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span>Database:</span></td>
+                        <td>
+                            <select name="db" id="db">
+                                {% for db in dbs %}
+                                <option value="{{ db }}">{{ db }}</option>
+                                {% endfor %}
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><small>Instances:</small></td>
+                        <td>
+                            <ul>
+                                <li class="{{ instances.1 }}"></li>
+                                <li class="{{ instances.2 }}"></li>
+                                <li class="{{ instances.3 }}"></li>
+                                <li class="{{ instances.4 }}"></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+            </form>
+        </div>
     </div>
 </body>
+
 </html>
