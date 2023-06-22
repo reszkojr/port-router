@@ -42,10 +42,9 @@
                         <td><small>Instances:</small></td>
                         <td>
                             <ul>
-                                <li class="{{ instances.1 }}"></li>
-                                <li class="{{ instances.2 }}"></li>
-                                <li class="{{ instances.3 }}"></li>
-                                <li class="{{ instances.4 }}"></li>
+                                {% for i in instances %}
+                                    <li class="ins{{ i }}"></li>
+                                {% endfor %}
                             </ul>
                         </td>
                     </tr>

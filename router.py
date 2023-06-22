@@ -21,7 +21,7 @@ databases = [
 
 instances = [
     None, # erp1
-    None, # erp2
+    '1', # erp2
     None, # erp3
     None, # erp4
 ]
