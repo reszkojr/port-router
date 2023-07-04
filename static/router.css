@@ -8,7 +8,7 @@ body {
     flex-direction: column;
     place-items: center;
     width: 300px;
-    height: 230px;
+    height: 260px;
     background-color: white;
     border-radius: 2px;
 }
@@ -47,7 +47,7 @@ li::before {
     display: inline-block;
 }
 
-.insNone::before {
+.ins0::before {
     background-color: greenyellow;
 }
 

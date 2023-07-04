@@ -16,7 +16,7 @@
             <div>
                 <span>Your IP: {{ ip }}</span>
             </div>
-            <form action="." method="post">
+            <form action="/" method="post">
                 <table>
                     <tr>
                         <td><span>Branch:</span></td>
@@ -38,6 +38,16 @@
                             </select>
                         </td>
                     </tr>
+                    <tr>
+                        <td><span>Instance:</span></td>
+                        <td>
+                            <select name="instance" id="instance">
+                                {% for i in instances %}
+                                <option value="{{ i }}">{{ i }}</option>
+                                {% endfor %}
+                            </select>
+                        </td>
+                    </tr>
                 </table>
                 <div id="submit">
                     <input type="submit" value="Connect">
@@ -45,7 +55,7 @@
                 <div id="instances">
                     <small>Instances:</small>
                     <ul>
-                        {% for i in instances %}
+                        {% for i in instances.values() %}
                             <li class="ins{{ i }}"></li>
                         {% endfor %}
                     </ul>
