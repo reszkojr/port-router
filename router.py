@@ -1,5 +1,5 @@
-from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse
+from fastapi import FastAPI, Request, Form
+from fastapi.responses import HTMLResponse, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
@@ -19,12 +19,8 @@ databases = [
     'EPA',
 ]
 
-instances = [
-    None, # erp1
-    '1', # erp2
-    None, # erp3
-    None, # erp4
-]
+instances = {'erp1': 0, 'erp2': 0, 'erp3': 0, 'erp4': 0}
+
 
 ip_hub = {}
 
@@ -44,7 +40,11 @@ def router(request: Request):
 
     return templates.TemplateResponse("router.html", context)
 
+@app.post('/')
+def redirect(instance: str = Form(...)):
+    return Response(status_code=302, headers={"Location": f"/{instance}"})
+
 if __name__ == '__main__':
     import uvicorn
 
-    uvicorn.run("router:app", host="0.0.0.0", port=8080, reload=True)
+    uvicorn.run("router:app", host="0.0.0.0", port=8000, reload=True, proxy_headers=True)
