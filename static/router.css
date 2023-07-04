@@ -41,14 +41,14 @@ li::before {
     content: '';
     height: 8px;
     width: 8px;
-    background-color: greenyellow;
+    background-color: red;
     border: 1px solid black;
     border-radius: 50%;
     display: inline-block;
 }
 
 .insNone::before {
-    background-color: #ff0000;
+    background-color: greenyellow;
 }
 
 span {
